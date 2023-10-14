@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="keywords" content="Rest Countries" />
+
+<meta name="description" content="Search for a country name and receive information about it." />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">  
+
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+<meta name="theme-color" content="#17181c" />
+
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+<!--<meta http-equiv="X-Frame-Options" content="deny">-->
+
+<title>Rest Countries API</title>
+
+<link rel="stylesheet" href="css/dumisa.css">
+<link rel="stylesheet" href="css/progress.css">
+<link rel="stylesheet" href="css/media.css">
+
+<link rel="manifest" href="manifest.json"/>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/logo.svg">
+
+<script src="https://kit.fontawesome.com/6256a3c9dc.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<section id="randomPage">
+
+<!--Rest countries api-->
+<article>
+
+  <h1>Rest countries api</h1>
+     
+  <p>type any country name to generate information about it!</p>
+    
+    <main class="whole">
+    <div class="country-search">
+    <input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off">
+    <button id="countryBtn" class="none"></button>
+    </div>
+    <ul id="suggestions"></ul>
+    </main>
+    
+  <div class="whole flex-column none" id="countrySuccess">
+  
+    <h2 id="countyName"></h2>
+    
+    <div class="country-info flex-column gap-30">
+      <img src="" alt="" id="countyFlag" width="50%">
+    </div>
+    
+    <div class="flex-row gap-30">
+     <p class="flex-column">Currency:&nbsp;<span class="condensed" id="countryCurrency"></span></p> 
+     
+     <p class="flex-column">Continent(s):&nbsp; <span class="condensed" id="countryContinent"></span></p> 
+    
+     <p class="flex-column">Phone:&nbsp; <span class="condensed" id="countryCode"></span></p> 
+    </div>
+    
+    <p>The currency name is known as:&nbsp; <span class="condensed" id="currencyFullName"></span></p>
+    
+    <div class="flex-row gap-30">
+      <p class="flex-column">Official Name of the Country: <span class=" condensed" id="countryOfficial"></span></p>
+    
+      <p class="flex-column">Timezone: <span class=" condensed" id="countryUtc"></span></p>
+      
+    </div>
+      
+    <details id="countryDetail">
+      <summary>
+      <span>Coat of arms</span>
+      <span class="material-icons" id="detailsExpand">expand_circle_down</span>
+      </summary> 
+      <div>
+      
+      <img src="" class="img" id="countryArm"> 
+      
+        
+      </div>
+    
+    </details>
+    
+    <main class="flex-row">
+    
+    <div class="equals">
+    <h1>Official Languages</h1>
+      <ol id="countyLanguages" class="list">
+      </ol>
+    </div>
+    
+    <div class="equals">
+      <h1>Capital City</h1>
+        <ol id="countyCapitals" class="list">
+        </ol>
+      </div>
+    
+    </main>
+    
+    <p>The country's population is <span class="condensed" id="countryPopulation"></span></p>
+    
+  </div>
+  
+  <div id="countryInitial" class="flex-column whole">
+    <img src="images/travel.svg" alt="WORLD" class="img">
+    <b class="highlight">Search For A Country using its name. For instance, search for South Africa and click on its suggestion which will appear as you type.</b>
+    </div>
+  
+  <div id="countryFail" class="flex-column whole none">
+  <img src="images/not_found.svg" alt="404" class="img">
+  <b class="highlight">Prompted country not found. Please type a valid country name and click on its suggestion!</b>
+  </div>
+
+      </article>
+      <!--Rest countries api-->
+
+ 
+ <footer class="footer">
+
+  <p>Special credit to the below organizations for the copyright free images and icons used: <span class="condensed">google fonts, Undraw, Illustration & freepik.</span></p>
+
+<!-- social media -->
+  <div class="flex-row-wrap">
+  
+    <!-- github link  --><a href="https://github.com/DumDevSA" class="footer-social  social-github" title="Github">
+      <i class="fa-brands fa-github"></i>
+    </a><!-- github link  end-->
+  
+    <!-- gmail link  --><a href="mailto:mini.sakhile@gmail.com?subject=Email Template from the Website&body=Hi, Sakhile" class="footer-social  social-gmail" title="Gmail">
+      <i class="fa-solid fa-envelope"></i>
+    </a><!-- gmail link end-->
+  
+    <!--instagram link  end--><a href="https://instagram.com/dumisasakhile?igshid=ZDc4ODBmNjlmNQ==" class="footer-social  social-instagram" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a><!--instagram link  end-->
+  
+    <!--linkedin link  --><a href="https://www.linkedin.com/in/sakhile-dumisa-a06601272" class="footer-social  social-linkedin" title="Linkedin">
+      <i class="fa-brands fa-linkedin"></i>
+    </a><!--linkedin link  end-->
+  
+    <!-- stack overflow link  --><a href="https://stackoverflow.com/users/18599116/dum-dev" class="footer-social  social-stack" title="Stack Overflow">
+      <i class="fa-brands fa-stack-overflow"></i>
+    </a>
+    <!--stack overflow link  end-->
+  
+    <!--share api-->
+    <div class="footer-social share-btn  social-share" title="Share">
+      <i class="fa-solid fa-share"></i>
+    </div>
+    <!--share api end-->
+  
+    <!--telegram link  --><a href="https://t.me/Sakhile_Mini" class="footer-social  social-telegram" title="Telegram">
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+    <!--telegram link  -->
+  
+    <!--whatsapp link  --><a href="https://wa.me/27683080698?text=Hi,%20Sakhile" class="footer-social  social-whatsapp" title="Whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a><!--whatsapp link  end-->
+  
+  
+  </div>
+  <!-- social media -->
+
+  <br>
+<p class="flex-row nogap"><span class="condensed">&nbsp;&copy;</span>&nbsp;Dumisa&nbsp; <span class="reservrYear"></span>.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+
+  <img src="images/up.svg" alt="go up" title="Go To The Top" class="icon-up">
+
+</footer>
+
+</section>
+
+<!-- universal pop-up -->
+<div class="universal-box flex-column gap-30 none" id="universal">
+
+<h6 id="title" class="nokne">universal title</h6>
+
+<div class="flex-row"><p id="content"></p> <span id="universalOkay">okay</span></div>
+</div>
+<!-- universal pop-up end-->
+
+</body>
+
+<script src="/js/dumisa.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="/js/autocomplete.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="pwa.js" type="text/javascript" charset="utf-8"></script>
+
+</html>
+
+
