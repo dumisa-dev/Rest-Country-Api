@@ -224,18 +224,14 @@ color: #000000;
   color: var(--tomato);
 }
 
-:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions){
+:is(#suggestions){
 	margin-left: 5%;
 	margin-top: 3px;
   width: 90%;
   list-style: none;
 }
 
-#bibleSuggestions{
-  margin: 0;
-}
-
-:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions) li{
+:is(#suggestions) li{
   font-family: var(--raji);
   font-size: 1rem;
   padding: 12px;
@@ -247,7 +243,7 @@ color: #000000;
   -webkit-backdrop-filter: blur(5px);
 }
 
-:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions) :is(li:hover,li:active){
+#suggestions :is(li:hover,li:active){
   background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   font-family: var(--sans);
   cursor: grabbing;
@@ -577,6 +573,7 @@ i{
   
 #countyFlag{
   border-radius: 4px;
+  width:300px !important;
 }
 
 #countryInput{
