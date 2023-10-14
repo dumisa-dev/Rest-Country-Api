@@ -112,8 +112,8 @@ $$(`input`).forEach(e=>{
 // share api
 
 const shareData = {
-title: "Dumisa",
-text: "Personal portfolio for Dumisa",
+title: "Rest Country",
+text: "Search for a country name and receive information about it.",
 url: "https://the-rest-country.netlify.app",
 };
 
