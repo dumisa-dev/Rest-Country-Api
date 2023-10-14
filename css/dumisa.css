@@ -128,6 +128,7 @@ p {
     padding-left: 10px;
     padding-right: 10px;
     letter-spacing: .1px;
+    font-family: var(--raji);
 }
 
 h6,h5,h4,h3,h2,h1{
@@ -155,7 +156,8 @@ h1{
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
+  flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -199,10 +201,10 @@ body .footer .flex-row-wrap{
 }
 
 .icon-up{
-  padding: 10px;
+  padding: 15px;
   position: absolute;
   right: 20px;
-  
+  border: .1px solid var(--theme);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   color: var(--theme);
@@ -213,28 +215,42 @@ body .footer .flex-row-wrap{
 }
 
 .icon-up:hover,.icon-up:active{
-transform: scale(1.2);
+background: var(--theme);
+color: #000000;
 }
 
-#logo{
-  padding-top: 10px;
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: 90px;
-  width: 100%;
-  z-index: 2;
-  background: transparent;
-  display: -ms-grid; 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  place-items: center;
-   -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-   background: var(--background);
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
+.fullscreen:hover{
+  cursor: grab;
+  color: var(--tomato);
+}
+
+:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions){
+	margin-left: 5%;
+	margin-top: 3px;
+  width: 90%;
+  list-style: none;
+}
+
+#bibleSuggestions{
+  margin: 0;
+}
+
+:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions) li{
+  font-family: var(--raji);
+  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 5px;
+  color: #000;
+  background: #BFCCE6;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+:is(#fromCurrencyBoxSuggestion,#toCurrencyBoxSuggestion,#suggestions,#poetSuggestions,#bibleSuggestions) :is(li:hover,li:active){
+  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
+  font-family: var(--sans);
+  cursor: grabbing;
 }
 
 .fld{
@@ -280,6 +296,11 @@ label{
   font-family: var(--raji);
   display: none;
 }
+
+#logo img{
+  display: none;
+}
+
 
 .btn,button,#button{
   width: 90%;

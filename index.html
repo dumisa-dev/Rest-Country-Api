@@ -20,14 +20,11 @@
     
 <meta name="theme-color" content="#17181c" />
 
-<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-
 <!--<meta http-equiv="X-Frame-Options" content="deny">-->
 
 <title>Rest Countries API</title>
 
 <link rel="stylesheet" href="css/dumisa.css">
-<link rel="stylesheet" href="css/progress.css">
 <link rel="stylesheet" href="css/media.css">
 
 <link rel="manifest" href="manifest.json"/>
@@ -41,7 +38,7 @@
 </head>
 
 <body>
-
+  <a href="https://dumisa-info.netlify.app" id="logo"><img src="images/logo.svg" alt=""></a>
 <section id="randomPage">
 
 <!--Rest countries api-->
@@ -53,7 +50,7 @@
     
     <main class="whole">
     <div class="country-search">
-    <input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off">
+    <input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off" value="South Africa">
     <button id="countryBtn" class="none"></button>
     </div>
     <ul id="suggestions"></ul>
@@ -179,10 +176,13 @@
   </div>
   <!-- social media -->
 
-  <br>
-<p class="flex-row nogap"><span class="condensed">&nbsp;&copy;</span>&nbsp;Dumisa&nbsp; <span class="reservrYear"></span>.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+  <span class="condensed fullscreen"><br>FullScreen Mode Toggle</span>
+<br>
+<p class="flex-row nogap"><span class="highlight">&nbsp;&copy;</span>&nbsp;<a href="https://dumisa-info.netlify.app/" class="highlight" target="_blank">Dumisa</a>&nbsp; <span class="reservrYear"></span>.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
 
-  <img src="images/up.svg" alt="go up" title="Go To The Top" class="icon-up">
+<span class="material-icons icon-up" alt="go up" title="Go To The Top">
+  arrow_upward
+</span>
 
 </footer>
 

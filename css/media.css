@@ -115,6 +115,34 @@ html:focus-within {
  
   }
 
+  @media(min-width: 800px){
+
+    .fullscreen{
+      display: block;
+  padding: 5px;
+  cursor: grab;
+    }
+  
+    .fullscreen:hover,.fullscreen:active{
+  color: var(--tomato);
+  
+    }
+  
+    #logo{
+      
+    }
+
+    #logo img{
+      display: block;
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      top: 30px;
+      left: 50px;
+      z-index: 3;
+      cursor: grab;
+    }
+  }  
 
 @media (min-width: 859px){
 
