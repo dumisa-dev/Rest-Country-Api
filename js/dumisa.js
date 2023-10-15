@@ -73,9 +73,7 @@ window.scrollTo({ top: 0, behavior: "smooth" })
   })
 });
 
-$('#countryDetail').addEventListener('click',()=>{
-  $('#detailsExpand').classList.toggle('rotate');
-})
+
 
 
 // time functions
@@ -162,9 +160,7 @@ document.onkeydown = (e) => {
 
 // country rest api
 
-const countyInitial = $('#countryInitial');
-const countryFail = $('#countryFail');
-const countrySuccess = $('#countrySuccess');
+
 
 $('#countryInput').addEventListener("keypress", function(event) {
   // If the user presses the "Enter" key on the keyboard
@@ -179,21 +175,19 @@ $('#countryInput').addEventListener("keypress", function(event) {
 
 function countriesApi() {
 
+flex($("#countyDetails"));
 $('#countyCapitals').innerHTML='';
 $('#countyLanguages').innerHTML='';
 
 let countryInput = $('#countryInput').value;
 
-  fetch(`https://restcountries.com/v3.1/name/${countryInput.trim()}?fullText=true`)
+fetch(`https://restcountries.com/v3.1/name/${countryInput.trim()}?fullText=true`)
 
-  .then((res)=>res.json())
+.then((res)=>res.json())
 
-  .then((countriesData)=>{
+.then((countriesData)=>{
 
   //console.log(countriesData[0]);
-none(countryInitial);
-none(countryFail);
-flex(countrySuccess);
   
 let countyName = $('#countyName');
 let countyFlag = $('#countyFlag');
@@ -260,18 +254,20 @@ countryArm.src = '';
 countryCurrency.textContent = null;
 currencyFullName.textContent = null;
 
-none(countryInitial);
-flex(countryFail);
-countryInput = null;
-none(countrySuccess);
 
 })
   }
 
 countryBtn.addEventListener('click',countriesApi);
 
-countriesApi();
+//countriesApi();
 // country rest api
+
+
+$("#countyDetails").addEventListener("click",()=>{
+  none($("#countyDetails"));
+})
+
 
   
 
@@ -313,4 +309,39 @@ function toggleFullscreen() {
           });
   }
 }
+
+
+let countriesBody = $("#countriesBody");
+
+fetch(`https://restcountries.com/v3.1/all`)
+.then((res)=>res.json())
+  .then((allCountriesNames)=>{
+
+   
+
+    allCountriesNames.map(e=>{
+
+let div = createEl('div');
+div.setAttribute('data-name', e.name.common);
+let img = createEl('img');
+img.setAttribute('alt', e.name.common);
+img.src = e.flags.svg;
+
+let p = createEl('p');
+p.className="flex-row gap";
+p.innerHTML= `Name: <span class="highlight">${e.name.common}</span>`;
+
+let p1 = createEl('p');
+p1.className="flex-row gap";
+p1.innerHTML= `Region: <span class="highlight">${e.region}</span>`;
+
+
+div.append(img,p,p1);
+$("#countriesBody").append(div)
+    
+});
+  })
+  .catch(err=>{
+    console.log(err);
+  });
 

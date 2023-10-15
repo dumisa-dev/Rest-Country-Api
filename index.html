@@ -41,94 +41,86 @@
   <a href="https://dumisa-info.netlify.app" id="logo"><img src="images/logo.svg" alt=""></a>
 <section id="randomPage">
 
+
+<article class="nobg">
+    
+<h1>Rest countries api</h1>
+     
+<p>type any country name to generate information about it!</p>
+    
+<main class="whole">
+<div class="country-search">
+<input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off" value="South Africa">
+<button id="countryBtn" class="none"></button>
+</div>
+<ul id="suggestions"></ul>
+</main>
+</article>
+
+
+<!-- <div class="j">
+<img src="https://flagcdn.com/cc.svg" alt="">
+<p class="flex-row gap">Name: <span class="highlight">South Africa</span></p>
+<p class="flex-row gap">Region: <span class="highlight">Africa</span></p>
+</div> -->
+
+<main id="countriesBody">
+
+</main>
+
+
 <!--Rest countries api-->
+<aside id="countyDetails">
+    
 <article>
+<h2 id="countyName"></h2>
+    
+<div class="country-info flex-column gap-30">
+<img src="" alt="" id="countyFlag" width="50%"></div>
+    
+<div class="flex-row gap-30">
+<p class="flex-column">Currency:&nbsp;<span class="condensed" id="countryCurrency"></span></p> 
+     
+<p class="flex-column">Continent(s):&nbsp; <span class="condensed" id="countryContinent"></span></p> 
+    
+<p class="flex-column">Phone:&nbsp; <span class="condensed" id="countryCode"></span></p> 
+</div>
+    
+<p>The currency name is known as:&nbsp; <span class="condensed" id="currencyFullName"></span></p>
+    
+<p class="flex-row gap">Official Name of the Country: <span class=" condensed" id="countryOfficial"></span></p>
+    
+<p class="flex-row gap">Timezone: <span class=" condensed" id="countryUtc"></span></p>
+</article>
 
-  <h1>Rest countries api</h1>
-     
-  <p>type any country name to generate information about it!</p>
-    
-    <main class="whole">
-    <div class="country-search">
-    <input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off" value="South Africa">
-    <button id="countryBtn" class="none"></button>
-    </div>
-    <ul id="suggestions"></ul>
-    </main>
-    
-  <div class="whole flex-column none" id="countrySuccess">
-  
-    <h2 id="countyName"></h2>
-    
-    <div class="country-info flex-column gap-30">
-      <img src="" alt="" id="countyFlag" width="50%">
-    </div>
-    
-    <div class="flex-row gap-30">
-     <p class="flex-column">Currency:&nbsp;<span class="condensed" id="countryCurrency"></span></p> 
-     
-     <p class="flex-column">Continent(s):&nbsp; <span class="condensed" id="countryContinent"></span></p> 
-    
-     <p class="flex-column">Phone:&nbsp; <span class="condensed" id="countryCode"></span></p> 
-    </div>
-    
-    <p>The currency name is known as:&nbsp; <span class="condensed" id="currencyFullName"></span></p>
-    
-    <div class="flex-row gap-30">
-      <p class="flex-column">Official Name of the Country: <span class=" condensed" id="countryOfficial"></span></p>
-    
-      <p class="flex-column">Timezone: <span class=" condensed" id="countryUtc"></span></p>
-      
-    </div>
-      
-    <details id="countryDetail">
-      <summary>
-      <span>Coat of arms</span>
-      <span class="material-icons" id="detailsExpand">expand_circle_down</span>
-      </summary> 
-      <div>
-      
-      <img src="" class="img" id="countryArm"> 
-      
+<article>
+<main class="flex-row">    
+<div class="equals">
+<h1>Official Languages</h1>
+<ol id="countyLanguages" class="list"></ol>
+</div>
         
-      </div>
-    
-    </details>
-    
-    <main class="flex-row">
-    
-    <div class="equals">
-    <h1>Official Languages</h1>
-      <ol id="countyLanguages" class="list">
-      </ol>
-    </div>
-    
-    <div class="equals">
-      <h1>Capital City</h1>
-        <ol id="countyCapitals" class="list">
-        </ol>
-      </div>
-    
-    </main>
-    
-    <p>The country's population is <span class="condensed" id="countryPopulation"></span></p>
-    
-  </div>
-  
-  <div id="countryInitial" class="flex-column whole">
-    <img src="images/travel.svg" alt="WORLD" class="img">
-    <b class="highlight">Search For A Country using its name. For instance, search for South Africa and click on its suggestion which will appear as you type.</b>
-    </div>
-  
-  <div id="countryFail" class="flex-column whole none">
-  <img src="images/not_found.svg" alt="404" class="img">
-  <b class="highlight">Prompted country not found. Please type a valid country name and click on its suggestion!</b>
-  </div>
+<div class="equals">
+<h1>Capital City</h1>
+<ol id="countyCapitals" class="list"></ol>
+</div>     
+</main>
+        
+<p>The country's population is <span class="condensed" id="countryPopulation"></span></p>
+</article>
 
-      </article>
-      <!--Rest countries api-->
+
+<article>
+<h3>Coat of arms</h3>      
+<img src="" class="img" id="countryArm">       
+</article>
+
+</aside>
+<!--Rest countries api-->
 
  
+
+
  <footer class="footer">
 
   <p>Special credit to the below organizations for the copyright free images and icons used: <span class="condensed">google fonts, Undraw, Illustration & freepik.</span></p>

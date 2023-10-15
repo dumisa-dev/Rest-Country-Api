@@ -324,7 +324,7 @@ label{
 }
 
 details{
-  width: 90%;
+  width: 90% !important;
   border-radius: 4PX;
   background: var(--smoke);
 }
@@ -647,8 +647,73 @@ button:hover,button:active {
   padding: 10px;
   color: var(--smoke);
   font-size: .9rem;
+}
+
+#countyDetails{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  overflow-y: auto;
+  padding: 20px 0;
+  display: none;
 
 }
+
+#countyDetails article{
+  align-self: center;
+}
+
+
+#countriesBody{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  gap: 30px;
+}
+
+
+.focus:hover,.focus:active{
+  background: var(--lime);
+  opacity: 1;
+}
+
+
+#countriesBody div{
+  background: rgb(52,61,70);
+  border-radius: 7px;
+  width: 310px;
+  border: .1px solid #000 !important;
+}
+
+#countriesBody div img{
+  width: 100%;
+  border-radius: 7px 7px 0 0;
+}
+
+#countriesBody div p{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+  text-align: left;
+}
+
+
 
 
 /* special classes start  */

@@ -3,7 +3,7 @@ fetch(`https://restcountries.com/v3.1/all`)
 .then((res)=>res.json())
   .then((allCountriesNames)=>{
 
-    //console.log(allCountriesNames);
+    console.log(allCountriesNames);
 
     allCountriesNames.map(e=>{
 
