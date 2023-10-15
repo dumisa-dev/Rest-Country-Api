@@ -14,27 +14,27 @@ html:focus-within {
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   border-radius: 30px;
   width: 9px;
 }
 
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: var(--background);
   border-radius: 30px;
 
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   border-radius: 30px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-::-webkit-scrollbar-button {
+body::-webkit-scrollbar-button {
   display: none;
 }
 
@@ -105,11 +105,33 @@ html:focus-within {
  
   }
 
-  @media(min-width: 800px){
+
+@media(min-width: 800px){
     
-    #countriesBody ::-webkit-scrollbar-thumb {
+#countriesBody::-webkit-scrollbar-thumb {
       display: initial;
     }
+    
+#countriesBody::-webkit-scrollbar {
+  border-radius: 30px;
+  width: 9px;
+}
+
+#countriesBody::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 30px;
+
+}
+
+#countriesBody::-webkit-scrollbar-thumb {
+  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
+  border-radius: 30px;
+}
+
+#countriesBody::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 .fullscreen{
   display: block;
@@ -131,6 +153,7 @@ color: var(--tomato);
       z-index: 3;
       cursor: grab;
     }
+    
   }  
 
 @media (min-width: 859px){

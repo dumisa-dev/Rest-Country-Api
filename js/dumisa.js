@@ -200,7 +200,7 @@ countyFlag.src = countriesData[0].flags.svg;
 countryOfficial.textContent = countriesData[0].name.official;
 countyName.textContent = countriesData[0].name.common;
 countryUtc.textContent = countriesData[0].timezones[0];
-countryPopulation.textContent = countriesData[0].population;
+countryPopulation.textContent = countriesData[0].population.toLocaleString();
 countryContinent.textContent = countriesData[0].continents;
 countryArm.src = countriesData[0].coatOfArms.png;
 

@@ -569,7 +569,8 @@ i{
   
 #countyFlag{
   border-radius: 4px;
-  width:300px !important;
+  width: 90% !important;
+  max-width: 450px;
 }
 
 #countryInput{
