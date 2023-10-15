@@ -345,6 +345,8 @@ $$('#filterBox span').forEach(filter => {
     removeRegionActive();
     ev.currentTarget.classList.add('active');
     
+$('#countryInput').value = null;
+    
 $$("#countriesBody div").forEach(dv=>{
   
 if(ev.currentTarget.textContent.toLowerCase() === "all"){
@@ -368,7 +370,31 @@ function removeRegionActive() {
   })
 }
 
-;
+$('#countryInput').addEventListener("keyup",function(){
+  removeRegionActive();
+  
+$$('#countriesBody div').forEach(filter =>{
+ 
+ filter.dataset.name.toLowerCase().startsWith(this.value.toLowerCase()) ? grid(filter) : none(filter);
+  
+})
+  
+});
+
+
+$('#countryInput').addEventListener("blur", function() {
+  removeRegionActive();
+
+  $$('#countriesBody div').forEach(filter => {
+
+if(!this.value){
+  grid(filter);
+} 
+
+  })
+
+})
+
     
 });
   })
