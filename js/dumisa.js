@@ -1,5 +1,3 @@
-
-
 function $(element){
 return document.querySelector(element);
 }
@@ -317,12 +315,11 @@ fetch(`https://restcountries.com/v3.1/all`)
 .then((res)=>res.json())
   .then((allCountriesNames)=>{
 
-   
-
-    allCountriesNames.map(e=>{
+allCountriesNames.map(e=>{
 
 let div = createEl('div');
 div.setAttribute('data-name', e.name.common);
+div.setAttribute('data-region', e.region);
 let img = createEl('img');
 img.setAttribute('alt', e.name.common);
 img.src = e.flags.png;
@@ -337,11 +334,43 @@ p1.innerHTML= `Region: <span class="highlight">${e.region}</span>`;
 
 
 div.append(img,p,p1);
-$("#countriesBody").append(div)
+$("#countriesBody").append(div);
+
+
+$$('#filterBox span').forEach(filter => {
+  filter.addEventListener("click", (ev) => {
+    removeRegionActive();
+    ev.currentTarget.classList.add('active');
+    
+$$("#countriesBody div").forEach(dv=>{
+  
+if(ev.currentTarget.textContent.toLowerCase() === "all"){
+  grid(dv);
+}else{
+  
+dv.dataset.region.toLowerCase().includes(ev.currentTarget.textContent.toLowerCase()) ? grid(dv) : none(dv);
+}
+
+
+})  
+    
+  })
+});
+
+function removeRegionActive() {
+
+  $$('#filterBox span').forEach(filter => {
+
+    filter.classList.remove('active');
+  })
+}
+
+
     
 });
   })
   .catch(err=>{
     console.log(err);
   });
+
 
