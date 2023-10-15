@@ -315,6 +315,10 @@ fetch(`https://restcountries.com/v3.1/all`)
 .then((res)=>res.json())
   .then((allCountriesNames)=>{
 
+console.log(allCountriesNames[0]);
+
+allCountriesNames = allCountriesNames.sort((a, b) => (a.name.common > b.name.common) ? 1 : ((b.name.common > a.name.common) ? -1 : 0));
+
 allCountriesNames.map(e=>{
 
 let div = createEl('div');
@@ -331,7 +335,6 @@ p.innerHTML= `Name: <span class="highlight">${e.name.common}</span>`;
 let p1 = createEl('p');
 p1.className="flex-row gap";
 p1.innerHTML= `Region: <span class="highlight">${e.region}</span>`;
-
 
 div.append(img,p,p1);
 $("#countriesBody").append(div);
@@ -365,7 +368,7 @@ function removeRegionActive() {
   })
 }
 
-
+;
     
 });
   })
