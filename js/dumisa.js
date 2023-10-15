@@ -213,7 +213,7 @@ countyName.textContent = countriesData[0].name.common;
 countryUtc.textContent = countriesData[0].timezones[0];
 countryPopulation.textContent = countriesData[0].population;
 countryContinent.textContent = countriesData[0].continents;
-countryArm.src = countriesData[0].coatOfArms.svg;
+countryArm.src = countriesData[0].coatOfArms.png;
 
 
 
@@ -325,7 +325,7 @@ let div = createEl('div');
 div.setAttribute('data-name', e.name.common);
 let img = createEl('img');
 img.setAttribute('alt', e.name.common);
-img.src = e.flags.svg;
+img.src = e.flags.png;
 
 let p = createEl('p');
 p.className="flex-row gap";
