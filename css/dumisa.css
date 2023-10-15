@@ -238,13 +238,13 @@ color: #000000;
   margin-bottom: 5px;
   color: #000;
   background: #BFCCE6;
-  border-radius: 4px;
+  border-radius: 2px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
 #suggestions :is(li:hover,li:active){
-  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
+  background: var(--tomato);
   font-family: var(--sans);
   cursor: grabbing;
 }
@@ -687,13 +687,8 @@ button:hover,button:active {
 }
 
 
-.focus:hover,.focus:active{
-  background: var(--lime);
-  opacity: 1;
-}
-
-
 #countriesBody div{
+  align-self: stretch;
   background: rgb(52,61,70);
   border-radius: 7px;
   width: 310px;
@@ -713,6 +708,10 @@ button:hover,button:active {
   text-align: left;
 }
 
+#countriesBody :is(div:hover,div:active){
+  opacity: .5;
+  cursor: pointer;
+}
 
 
 
