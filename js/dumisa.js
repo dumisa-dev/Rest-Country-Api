@@ -160,18 +160,9 @@ document.onkeydown = (e) => {
 
 
 
-$('#countryInput').addEventListener("keypress", function(event) {
-  // If the user presses the "Enter" key on the keyboard
-  if (event.key === "Enter") {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    this.blur();
-    countryBtn.click();
-  }
-});
+function countriesApi(fromTheClickedDiv) {
 
-function countriesApi() {
+  $("body").classList.add('overflow');
 
 flex($("#countyDetails"));
 $('#countyCapitals').innerHTML='';
@@ -179,7 +170,7 @@ $('#countyLanguages').innerHTML='';
 
 let countryInput = $('#countryInput').value;
 
-fetch(`https://restcountries.com/v3.1/name/${countryInput.trim()}?fullText=true`)
+fetch(`https://restcountries.com/v3.1/name/${fromTheClickedDiv.trim()}?fullText=true`)
 
 .then((res)=>res.json())
 
@@ -253,7 +244,10 @@ countryCurrency.textContent = null;
 currencyFullName.textContent = null;
 
 
-})
+});
+
+$("#countriesBody").scrollTo({ top: 0, behavior: "auto" });
+
   }
 
 countryBtn.addEventListener('click',countriesApi);
@@ -264,6 +258,7 @@ countryBtn.addEventListener('click',countriesApi);
 
 $("#countyDetails").addEventListener("click",()=>{
   none($("#countyDetails"));
+  $("body").classList.remove('overflow');
 })
 
 
@@ -339,6 +334,17 @@ p1.innerHTML= `Region: <span class="highlight">${e.region}</span>`;
 div.append(img,p,p1);
 $("#countriesBody").append(div);
 
+    
+});
+
+$$('#countriesBody div').forEach(filter => {
+  filter.addEventListener("click", (ev) => {
+    countriesApi(ev.currentTarget.dataset.name);
+$("#countriesBody").scrollTo({ top: 0, behavior: "auto" });
+    
+  })
+
+});
 
 $$('#filterBox span').forEach(filter => {
   filter.addEventListener("click", (ev) => {
@@ -390,13 +396,15 @@ $('#countryInput').addEventListener("blur", function() {
 if(!this.value){
   grid(filter);
 } 
+;
 
-  })
+  });
+  
+
 
 })
 
-    
-});
+
   })
   .catch(err=>{
     console.log(err);

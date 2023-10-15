@@ -73,9 +73,7 @@ html:focus-within {
       width: 98% !important;
     }
   
-:is(#subTvDescription,#subMovieDescription) article:last-child{
-      display: none;
-    }
+
   
   body{
       -webkit-box-orient: vertical;
@@ -87,15 +85,19 @@ html:focus-within {
               justify-content: flex-start;
     }
   
-  ::-webkit-meter-bar{
-      border-radius: 2px;
-    }
+::-webkit-meter-bar{
+ border-radius: 2px;
+}
     
-      
+#countriesBody ::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
   }
 
 
 @media (min-width: 500px){
+  
   :is(.article,article,#biblePage #bibleContent p,#form), .flex-column-wrap :is(.article,article){
     width: 100% !important;
   }
@@ -104,23 +106,22 @@ html:focus-within {
   }
 
   @media(min-width: 800px){
+    
+    #countriesBody ::-webkit-scrollbar-thumb {
+      display: initial;
+    }
 
-    .fullscreen{
-      display: block;
+.fullscreen{
+  display: block;
   padding: 5px;
   cursor: grab;
-    }
+}
   
-    .fullscreen:hover,.fullscreen:active{
-  color: var(--tomato);
+.fullscreen:hover,.fullscreen:active{
+color: var(--tomato);
+}
   
-    }
-  
-    #logo{
-      
-    }
-
-    #logo img{
+#logo img{
       display: block;
       position: absolute;
       width: 55px;
