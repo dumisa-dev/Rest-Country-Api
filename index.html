@@ -22,7 +22,7 @@
 
 <!--<meta http-equiv="X-Frame-Options" content="deny">-->
 
-<title>Rest Countries API</title>
+<title>The Rest Countries API</title>
 
 <link rel="stylesheet" href="css/dumisa.css">
 <link rel="stylesheet" href="css/media.css">
@@ -38,7 +38,9 @@
 </head>
 
 <body>
-  <a href="https://dumisa-info.netlify.app" id="logo"><img src="images/logo.svg" alt=""></a>
+  
+<a href="https://dumisa-info.netlify.app" id="logo"><img src="images/logo.svg" alt=""></a>
+
 <section id="randomPage">
 
 
@@ -47,14 +49,28 @@
 <h1>Rest countries api</h1>
      
 <main class="whole">
-<div class="country-search">
-<input type="search" name="countryInput" id="countryInput" placeholder="Type a country name" autocomplete="off" value="South Africa">
+<div class="country-search gap">
+<input type="search" name="countryInput" id="countryInput" placeholder="Type a country name e.g South Africa" autocomplete="off">
+<span class="material-icons" id="searchIcon">search</span>
+
 <button id="countryBtn" class="none"></button>
 </div>
 <ul id="suggestions"></ul>
 </main>
 </article>
 
+
+<aside id="filterBox">
+
+<span data-region="Africa">All</span>
+<span data-region="Africa">Africa</span>
+<span data-region="Asia">Asia</span>
+<span data-region="Antarctic">Antarctic</span>
+<span data-region="Europe">Europe</span>
+<span data-region="Ocenia">Ocenia</span>
+</div>
+  
+</aside>
 
 <!-- <div class="j">
 <img src="https://flagcdn.com/cc.svg" alt="">
@@ -191,7 +207,7 @@
 
 <script src="/js/dumisa.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="/js/autocomplete.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="/js/autocomplete.js" type="text/javascript" charset="utf-8"></script>-->
 
 <script src="pwa.js" type="text/javascript" charset="utf-8"></script>
 
