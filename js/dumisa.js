@@ -315,7 +315,7 @@ fetch(`https://restcountries.com/v3.1/all`)
 .then((res)=>res.json())
   .then((allCountriesNames)=>{
 
-console.log(allCountriesNames[0]);
+//console.log(allCountriesNames[0]);
 
 allCountriesNames = allCountriesNames.sort((a, b) => (a.name.common > b.name.common) ? 1 : ((b.name.common > a.name.common) ? -1 : 0));
 
@@ -375,5 +375,4 @@ function removeRegionActive() {
   .catch(err=>{
     console.log(err);
   });
-
 
