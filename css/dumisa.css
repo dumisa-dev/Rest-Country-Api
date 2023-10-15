@@ -739,7 +739,11 @@ button:hover,button:active {
 }
 
 #filterBox::-webkit-scrollbar-thumb {
-  display: none;
+  display: none !important;
+}
+
+#filterBox::-webkit-scrollbar {
+  display: none !important;
 }
 
 #filterBox span{
