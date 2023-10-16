@@ -319,63 +319,6 @@ label{
   width: 100%;
 }
 
-details{
-  width: 90% !important;
-  border-radius: 4PX;
-  background: var(--smoke);
-}
-
-details div{
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-  border-radius: 4PX;
-  background: var(--smoke);
-  color: var(--smoke);
-  margin-bottom: 10px;
-}
-
-summary{
-  border-radius: 4PX;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -ms-grid-columns: auto 40%;
-  grid-template-columns: auto 40%;
-  padding-left: 20%;
-  height: 50px;
-  font-family: var(--roboto);
-  border-radius: 4PX;
-  font-size: .8rem;
-  background: var(--smoke);
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-summary span{
-  color: var(--background);
-  text-transform: capitalize;
-}
-
-.rotate{
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
 .equals{
   gap: 20px;
   display: -webkit-box;
@@ -687,6 +630,7 @@ button:hover,button:active {
 
 #countriesBody{
   position: relative;
+  min-height: 400px;
   padding: 20px;
   width: 100%;
   display: flex;
@@ -721,6 +665,7 @@ button:hover,button:active {
 #countriesBody :is(div:hover,div:active){
   opacity: .5;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 #filterBox{
@@ -755,6 +700,7 @@ button:hover,button:active {
   height: 50px;
   color: #fefefe;
   font-family: var(--roboto);
+  cursor: grab;
 }
 
 #filterBox .active{
