@@ -714,9 +714,7 @@ button:hover,button:active {
 }
 
 
-#countriesBody ::-webkit-scrollbar-thumb {
-  display: none;
-}
+
  
 /* special classes start  */
 .full {

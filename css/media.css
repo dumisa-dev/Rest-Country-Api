@@ -90,7 +90,7 @@ body::-webkit-scrollbar-button {
 }
     
 #countriesBody ::-webkit-scrollbar-thumb {
-  display: none !important;
+  display: none;
 }
 
   }
@@ -109,29 +109,32 @@ body::-webkit-scrollbar-button {
 @media(min-width: 800px){
     
 #countriesBody::-webkit-scrollbar-thumb {
-      display: initial;
+      display: initial !important;
     }
     
 #countriesBody::-webkit-scrollbar {
-  border-radius: 30px;
-  width: 9px;
+  border-radius: 30px !important;
+  width: 9px !important;
 }
 
 #countriesBody::-webkit-scrollbar-track {
-  background: var(--background);
-  border-radius: 30px;
+  background: var(--background) !important;
+  border-radius: 30px !important;
 
 }
 
 #countriesBody::-webkit-scrollbar-thumb {
-  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
-  border-radius: 30px;
+  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a) !important;
+  border-radius: 30px !important;
 }
 
 #countriesBody::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #555 !important;
 }
 
+#countriesBody ::-webkit-scrollbar-thumb {
+  display: auto;
+}
 
 .fullscreen{
   display: block;

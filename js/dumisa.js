@@ -202,7 +202,7 @@ countyName.textContent = countriesData[0].name.common;
 countryUtc.textContent = countriesData[0].timezones[0];
 countryPopulation.textContent = countriesData[0].population.toLocaleString();
 countryContinent.textContent = countriesData[0].continents;
-countryArm.src = countriesData[0].coatOfArms.png;
+countryArm.src = countriesData[0].coatOfArms.svg;
 
 
 
@@ -321,7 +321,7 @@ div.setAttribute('data-name', e.name.common);
 div.setAttribute('data-region', e.region);
 let img = createEl('img');
 img.setAttribute('alt', e.name.common);
-img.src = e.flags.png;
+img.src = e.flags.svg;
 
 let p = createEl('p');
 p.className="flex-row gap";
