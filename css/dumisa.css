@@ -663,7 +663,7 @@ button:hover,button:active {
 }
 
 #countriesBody :is(div:hover,div:active){
-  opacity: .5;
+  opacity: .9;
   cursor: pointer;
   transform: scale(1.1);
 }
