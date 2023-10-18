@@ -104,10 +104,14 @@ body::-webkit-scrollbar-button {
   
  
   }
-
-
+   
+  
 @media(min-width: 800px){
-    
+   
+#filterBox{
+  width: 80%;
+}
+
 #countriesBody::-webkit-scrollbar-thumb {
       display: initial !important;
     }
@@ -146,16 +150,7 @@ body::-webkit-scrollbar-button {
 color: var(--tomato);
 }
   
-#logo img{
-      display: block;
-      position: absolute;
-      width: 55px;
-      height: 55px;
-      top: 30px;
-      left: 50px;
-      z-index: 3;
-      cursor: grab;
-    }
+
     
   }  
 
@@ -167,6 +162,18 @@ color: var(--tomato);
   
     }
   
+@media(min-width: 871px){
+      #logo img{
+        display: block;
+        position: absolute;
+        width: 100px;
+        top: 30px;
+        left: 50px;
+        z-index: 3;
+        cursor: grab;
+      }
+    }
+
   @media (min-width: 1300px){
       :is(.article,article,#biblePage #bibleContent p,#form), .flex-column-wrap :is(.article,article){
         width: 350px !important;
