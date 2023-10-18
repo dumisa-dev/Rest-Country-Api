@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 
 .material-icons, i{
   -webkit-user-select: none;
@@ -143,6 +150,7 @@ body::-webkit-scrollbar-button {
 .fullscreen{
   display: block;
   padding: 5px;
+  cursor: -webkit-grab;
   cursor: grab;
 }
   
@@ -170,6 +178,7 @@ color: var(--tomato);
         top: 30px;
         left: 50px;
         z-index: 3;
+        cursor: -webkit-grab;
         cursor: grab;
       }
     }

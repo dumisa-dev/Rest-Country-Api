@@ -1,11 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap';
 
 * {
     padding: 0px;
     margin: 0px;
     text-decoration: none;
-    user-select: none;
-     box-sizing: border-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+     -webkit-box-sizing: border-box;
+             box-sizing: border-box;
     border: none;
 }
 
@@ -36,9 +47,16 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 30px;
 }
 
@@ -47,9 +65,16 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .flex-evenly {
@@ -72,25 +97,42 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: row;
-  align-self: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   padding-left: -10px;
   gap: 30px;
   width: 100%;
- flex-wrap: wrap;
+ -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
 }
 
 .flex-column-wrap{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
- justify-content: center;
- flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+ -webkit-box-pack: center;
+     -ms-flex-pack: center;
+         justify-content: center;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
   gap: 30px;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   padding-left: 10px;
 }
 
@@ -101,10 +143,19 @@
 
 body {
   background-color: var(--background);
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-    align-items: center;
-   justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 30px;
 }
 
@@ -153,8 +204,13 @@ h1{
   position: absolute;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -217,6 +273,7 @@ color: #000000;
 }
 
 .fullscreen:hover{
+  cursor: -webkit-grab;
   cursor: grab;
   color: var(--tomato);
 }
@@ -243,6 +300,7 @@ color: #000000;
 #suggestions :is(li:hover,li:active){
   background: var(--tomato);
   font-family: var(--sans);
+  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
@@ -267,6 +325,22 @@ color: #000000;
   border-radius: 0px;
   background: none !important;
   color: #000 !important;
+}
+
+.fld .input::-webkit-input-placeholder{
+  color: #343f46 !important;
+}
+
+.fld .input::-moz-placeholder{
+  color: #343f46 !important;
+}
+
+.fld .input:-ms-input-placeholder{
+  color: #343f46 !important;
+}
+
+.fld .input::-ms-input-placeholder{
+  color: #343f46 !important;
 }
 
 .fld .input::placeholder{
@@ -297,6 +371,7 @@ label{
 .btn,button,#button{
   width: 90%;
   height: 45px;
+  background-image: -o-radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   color: #111;
   font-weight: bolder;
@@ -311,6 +386,7 @@ label{
   place-items: center;
   border-radius: 5px;
   height: 55px;
+  cursor: -webkit-grab;
   cursor: grab;
   letter-spacing: .1rem;
 }
@@ -374,6 +450,7 @@ label{
 
 #universalOkay{
   font-family: var(--sans) !important;
+  background-image: -o-radial-gradient(circle, #f42f2f, #f72727, #fa1e1d, #fd1311, #ff0000);
   background-image: radial-gradient(circle, #f42f2f, #f72727, #fa1e1d, #fd1311, #ff0000);
   font-weight: bold;
   color: var(--smoke);
@@ -388,7 +465,8 @@ label{
 }
 
 #universalOkay:hover,#universalOkay:active{
-  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
 }
 
 .article,article,#form{
@@ -464,44 +542,55 @@ label{
 }
 
 .footer-social:hover,.footer-social:active{
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .social-gmail{
+  background-image: -o-radial-gradient(circle, #f42f2f, #f72727, #fa1e1d, #fd1311, #ff0000);
   background-image: radial-gradient(circle, #f42f2f, #f72727, #fa1e1d, #fd1311, #ff0000);
 }
 
 .social-github{
+  background: -o-radial-gradient(circle, #000813, #060708);
   background: radial-gradient(circle, #000813, #060708);
 }
 
 .social-stack{
+  background: -o-radial-gradient(circle, #F48024, #C54E19);
   background: radial-gradient(circle, #F48024, #C54E19);
 }
 
 .social-whatsapp{
+  background: -o-radial-gradient(circle, #28D146, #1EAB36);
   background: radial-gradient(circle, #28D146, #1EAB36);
 }
 
 .social-linkedin{
+  background: -o-radial-gradient(circle, #1877F2, #0D5DA9);
   background: radial-gradient(circle, #1877F2, #0D5DA9);
 }
 
 .social-telegram{
+  background: -o-radial-gradient(circle, #0178a7, #0087B9);
   background: radial-gradient(circle, #0178a7, #0087B9);
 }
 
 .social-instagram{
+  background: -o-radial-gradient(circle, #EE2A7B, #ac3f6d);
   background: radial-gradient(circle, #EE2A7B, #ac3f6d);
 }
 
 .social-share{
+  background: -o-radial-gradient(circle, #0066FF, #0052CC);
   background: radial-gradient(circle, #0066FF, #0052CC);
 }
 
 .child-social:hover,.child-social:active{
   border :none;
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
  
 i{
@@ -542,6 +631,7 @@ i{
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  display: -ms-grid;
   display: grid;
   place-items: center;
 }
@@ -565,7 +655,8 @@ input[type="search"]::-webkit-search-cancel-button {
   pointer-events: none;
   position:relative;
   right:20px;  
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);  
+          transform: scale(1.5);
 }
 
 input[type="search"]:focus::-webkit-search-cancel-button {
@@ -612,11 +703,21 @@ button:hover,button:active {
   height: 100%;
   z-index: 4;
   background: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 30px;
   overflow-y: auto;
   padding: 20px 0;
@@ -625,7 +726,9 @@ button:hover,button:active {
 }
 
 #countyDetails article{
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #countriesBody{
@@ -633,16 +736,28 @@ button:hover,button:active {
   min-height: 400px;
   padding: 20px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap; 
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; 
   gap: 30px;
 }
 
 #countriesBody div{
-  align-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
   background: rgb(52,61,70);
   border-radius: 7px;
   width: 310px;
@@ -656,8 +771,12 @@ button:hover,button:active {
 
 #countriesBody div p{
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding-left: 10px;
   text-align: left;
 }
@@ -665,7 +784,9 @@ button:hover,button:active {
 #countriesBody :is(div:hover,div:active){
   opacity: .9;
   cursor: pointer;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #filterBox{
@@ -675,8 +796,10 @@ button:hover,button:active {
   position: relative;
   z-index: 4;
   background: transparent;
+  display: -ms-grid;
   display: grid;
  place-items: center;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(7, 1fr);
   overflow-x: auto;
   padding: 0 10px;
@@ -692,6 +815,7 @@ button:hover,button:active {
 }
 
 #filterBox span{
+  display: -ms-grid;
   display: grid;
   place-items: center;
   background: rgb(52, 61, 70);
@@ -700,6 +824,7 @@ button:hover,button:active {
   height: 50px;
   color: #fefefe;
   font-family: var(--roboto);
+  cursor: -webkit-grab;
   cursor: grab;
 }
 
@@ -921,7 +1046,7 @@ button:hover,button:active {
 }
 
 .bgImg{
+  background-image: -o-radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
   border-radius: 5%;
 }
-
