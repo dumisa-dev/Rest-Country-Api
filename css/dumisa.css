@@ -325,6 +325,7 @@ color: #000000;
   border-radius: 0px;
   background: none !important;
   color: #000 !important;
+  caret-color: var(--theme);
 }
 
 .fld .input::-webkit-input-placeholder{
@@ -621,6 +622,7 @@ i{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   color: #fefefe;
+caret-color: var(--theme);
 }
 
 #searchIcon{
