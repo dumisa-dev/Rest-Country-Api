@@ -285,7 +285,7 @@ document.onkeydown = function(evt) {
 let fullScreen = $$(".fullscreen");
 
 fullScreen.forEach(screen=>{
-  screen.addEventListener('click',toggleFullscreen)
+  screen.addEventListener('change',toggleFullscreen)
 })
 
 
@@ -410,3 +410,7 @@ if(!this.value){
     console.log(err);
   });
 
+  $("#logo").addEventListener('click',(ev)=>{
+    ev.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  })

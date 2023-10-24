@@ -147,12 +147,6 @@ body::-webkit-scrollbar-button {
   display: auto;
 }
 
-.fullscreen{
-  display: block;
-  padding: 5px;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
   
 .fullscreen:hover,.fullscreen:active{
 color: var(--tomato);

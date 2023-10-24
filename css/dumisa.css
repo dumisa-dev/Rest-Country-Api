@@ -272,19 +272,6 @@ background: var(--theme);
 color: #000000;
 }
 
-.fullscreen:hover{
-  cursor: -webkit-grab;
-  cursor: grab;
-  color: var(--tomato);
-}
-
-:is(#suggestions){
-	margin-left: 5%;
-	margin-top: 3px;
-  width: 90%;
-  list-style: none;
-}
-
 :is(#suggestions) li{
   font-family: var(--raji);
   font-size: 1rem;
@@ -325,7 +312,7 @@ color: #000000;
   border-radius: 0px;
   background: none !important;
   color: #000 !important;
-  caret-color: var(--theme);
+  caret-color: var(--tomato);
 }
 
 .fld .input::-webkit-input-placeholder{
@@ -839,6 +826,26 @@ button:hover,button:active {
   background: var(--tomato);
   color: #000;
 }
+
+.love{
+  color: var(--tomato);
+}
+
+#checkScreen{
+width: inherit;
+height: inherit;
+}
+
+#checkScreen{
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+  
+label:hover, label:active{
+color: var(--tomato) !important;
+cursor: grab;
+}
+
 
 
 
