@@ -282,27 +282,26 @@ document.onkeydown = function(evt) {
 // Close of the universal modal using the escape key
 
 
-let fullScreen = $$(".fullscreen");
+let fullScreen = $(".fullscreen");
 
-fullScreen.forEach(screen=>{
-  screen.addEventListener('change',toggleFullscreen)
-})
+fullScreen.addEventListener('click',toggleFullscreen);
 
+fullScreen.textContent = 'Enter Fullscreen Mode';      
 
 function toggleFullscreen() {
   if (document.fullscreenElement) {
       // If there's an element in fullscreen, exit fullscreen
       document.exitFullscreen();
+this.textContent = 'Enter Fullscreen Mode';      
   
   } else {
       // If not in fullscreen, request fullscreen on the document
-      document.documentElement.requestFullscreen()
-          .catch(err => {
+this.textContent = 'Exit Fullscreen Mode';      
+document.documentElement.requestFullscreen().catch(err => {
               console.error('Failed to enter fullscreen:', err);
           });
   }
 }
-
 
 let countriesBody = $("#countriesBody");
 
