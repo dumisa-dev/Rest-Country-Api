@@ -268,7 +268,7 @@ body .footer .flex-row-wrap{
 }
 
 .icon-up:hover,.icon-up:active{
-background: var(--theme);
+  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
 color: #000000;
 }
 
@@ -819,7 +819,7 @@ button:hover,button:active {
 
 #filterBox .active{
   color: #000;
-  background: var(--lime);
+  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
 }
 
 #filterBox :is(span:hover,span:active){
