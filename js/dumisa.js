@@ -81,6 +81,9 @@ $$('.social-child').forEach(e=>e.addEventListener('click',()=>{
 e.stopPropagation();
 }))
 
+
+//copyright years
+$("#copyrightYears").textContent = new Date().getFullYear();
   
 //preventions
 $$('img').forEach(e=>{
@@ -105,38 +108,8 @@ $$(`input`).forEach(e=>{
 },)
 // time functions end
 
-// share api
-
-const shareData = {
-title: "Rest Country",
-text: "Search for a country name and receive information about it.",
-url: "https://the-rest-country.netlify.app",
-};
-
-const shareBtn= $$(".share-btn");
 
 
-// Share must be triggered by "user activation"
-shareBtn.forEach(e=>{
-  e.addEventListener("click", async () => {
-  
-try {
-
-await navigator.share(shareData);
-
-//universalOn(3000,'successful','Dumisa shared successfully!');
-
-window.navigator.vibrate(200);
-    
-} catch (err) {
-    
-console.log(`an error occurred: ${err}`);
-    
-}
-});
-
-
-})
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
 function ctrlShiftKey(e, keyCode) {
