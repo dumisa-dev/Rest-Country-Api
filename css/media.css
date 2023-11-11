@@ -33,7 +33,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-image: radial-gradient(circle, #67bb0b, #71b914, #7ab81c, #83b623, #8ab52a);
+  background-image: radial-gradient(circle, hsla(116, 50%, 47%, 1) 0%, hsla(116, 53%, 53%, 1) 58%, hsla(116, 74%, 62%, 1) 100%);
+  background-image: -moz-radial-gradient(circle, hsla(116, 50%, 47%, 1) 0%, hsla(116, 53%, 53%, 1) 58%, hsla(116, 74%, 62%, 1) 100%);
+  background-image: -webkit-radial-gradient(circle, hsla(116, 50%, 47%, 1) 0%, hsla(116, 53%, 53%, 1) 58%, hsla(116, 74%, 62%, 1) 100%);
   border-radius: 30px;
 }
 
