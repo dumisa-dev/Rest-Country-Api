@@ -23,20 +23,15 @@ function flex(element,direction) {
   element.style.flexDirection=direction;
 }
 
-function universalOn(duration,theUniversalTitle,theUniversalContent) {
+function universalOn(theUniversalContent) {
   
-  flex($("#universal"));
-  
-  $("#title").textContent=`${theUniversalTitle}`;
+  grid($("#universal"));
   
   $("#content").textContent=`${theUniversalContent}`;
-  
-  setTimeout(()=>universalOff(), duration)
   
   }
   
 function universalOff() {
-  
     none($("#universal"));
   }
   
@@ -46,13 +41,14 @@ function createEl(elementToCreate){
   
 $('#universal').addEventListener('click', universalOff);
   
-function copyText(theCopiedText, theTime, theUniversalTitle, theUniversalContent) {
+function copyText(theCopiedText) {
   
     navigator.clipboard.writeText(`${theCopiedText}`);
   
-    universalOn(theTime, theUniversalTitle, theUniversalContent)
+    universalOn(`Copied "${theCopiedText}"`)
   
   }
+
   
 $$("button").forEach(e => {
   e.addEventListener("click", (ev) => {
@@ -130,12 +126,9 @@ document.onkeydown = (e) => {
 
 
 // country rest api
-
-
-
 function countriesApi(fromTheClickedDiv) {
 
-  $("body").classList.add('overflow');
+$("body").classList.add('overflow');
 
 flex($("#countyDetails"));
 $('#countyCapitals').innerHTML='';
@@ -143,13 +136,11 @@ $('#countyLanguages').innerHTML='';
 
 let countryInput = $('#countryInput').value;
 
-fetch(`https://restcountries.com/v3.1/name/${fromTheClickedDiv.trim()}?fullText=true`)
-
-.then((res)=>res.json())
+axios.get(`https://restcountries.com/v3.1/name/${fromTheClickedDiv.trim()}?fullText=true`)
 
 .then((countriesData)=>{
 
-  //console.log(countriesData[0]);
+//console.log(countriesData.data[0]);
   
 let countyName = $('#countyName');
 let countyFlag = $('#countyFlag');
@@ -164,38 +155,33 @@ let countyCapitals = $('#countyCapitals');
 let countryPopulation = $('#countryPopulation');
 let currencyFullName = $('#currencyFullName');
 
+countryCode.textContent = countriesData.data[0].idd.root + countriesData.data[0].idd.suffixes[0];
 
-countryCode.textContent = countriesData[0].idd.root + countriesData[0].idd.suffixes[0];
+countyFlag.src = countriesData.data[0].flags.svg;
+countryOfficial.textContent = countriesData.data[0].name.official;
+countyName.textContent = countriesData.data[0].name.common;
+countryUtc.textContent = countriesData.data[0].timezones[0];
+countryPopulation.textContent = countriesData.data[0].population.toLocaleString();
+countryContinent.textContent = countriesData.data[0].continents;
+countryArm.src = countriesData.data[0].coatOfArms.svg;
 
-
-
-countyFlag.src = countriesData[0].flags.svg;
-countryOfficial.textContent = countriesData[0].name.official;
-countyName.textContent = countriesData[0].name.common;
-countryUtc.textContent = countriesData[0].timezones[0];
-countryPopulation.textContent = countriesData[0].population.toLocaleString();
-countryContinent.textContent = countriesData[0].continents;
-countryArm.src = countriesData[0].coatOfArms.svg;
-
-
-
-let allLanguages = Object.values(countriesData[0].languages)
+let allLanguages = Object.values(countriesData.data[0].languages)
 allLanguages.forEach(e=>{
   let li = document.createElement('li');
     li.textContent = e;
     countyLanguages.append(li);
 })
 
-countriesData[0].capital.forEach(e=>{
+countriesData.data[0].capital.forEach(e=>{
   let li = document.createElement('li');
     li.textContent = e;
     countyCapitals.append(li);
 })
 
-let allCurrencies = Object.values(countriesData[0].currencies)
+let allCurrencies = Object.values(countriesData.data[0].currencies)
 countryCurrency.textContent = allCurrencies[0].symbol;
 
-let allCurrenciesFull = Object.values(countriesData[0].currencies)
+let allCurrenciesFull = Object.values(countriesData.data[0].currencies)
 currencyFullName.textContent = allCurrenciesFull[0].name;
 
 countyName.textContent.toLowerCase() === 'united states' || countyName.textContent.toLowerCase() === 'united states of america' ? countryCode.textContent = '+1' : null;
@@ -203,7 +189,7 @@ countyName.textContent.toLowerCase() === 'united states' || countyName.textConte
 
 }).catch((e)=>{
   
-  universalOn(6000,'404','Country could not be found, please type a correct name of the country in full!');
+  universalOn('Data about this country could not be found');
 
 countryCode.textContent = null;
 countyFlag.src = '';
@@ -221,24 +207,25 @@ currencyFullName.textContent = null;
 
 $("#countriesBody").scrollTo({ top: 0, behavior: "auto" });
 
+setTimeout(() => {
+  console.clear();
+}, 100);
   }
 
 countryBtn.addEventListener('click',countriesApi);
 
-//countriesApi();
 // country rest api
 
 
 $("#countyDetails").addEventListener("click",()=>{
   none($("#countyDetails"));
+  $("#countryArm").src='';
+  $("#countyFlag").src='';
   $("body").classList.remove('overflow');
 })
 
-
-  
-
+ 
 // Close of the universal modal using the escape key
-
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     var isEscape = false;
@@ -251,7 +238,6 @@ document.onkeydown = function(evt) {
         universalOff();
     }
 };
-
 // Close of the universal modal using the escape key
 
 
@@ -278,16 +264,13 @@ document.documentElement.requestFullscreen().catch(err => {
 
 let countriesBody = $("#countriesBody");
 
-fetch(`https://restcountries.com/v3.1/all`)
-.then((res)=>res.json())
-  .then((allCountriesNames)=>{
 
-    //countriesBody.innerHTML=''; 
-//console.log(allCountriesNames[0]);
+axios.get(`https://restcountries.com/v3.1/all`)
+.then((allCountriesNames)=>{
 
-allCountriesNames = allCountriesNames.sort((a, b) => (a.name.common > b.name.common) ? 1 : ((b.name.common > a.name.common) ? -1 : 0));
+allCountriesNames.data = allCountriesNames.data.sort((a, b) => (a.name.common > b.name.common) ? 1 : ((b.name.common > a.name.common) ? -1 : 0));
 
-allCountriesNames.map(e=>{
+allCountriesNames.data.map(e=>{
 
 let div = createEl('div');
 div.setAttribute('data-name', e.name.common);
@@ -380,10 +363,13 @@ if(!this.value){
 
   })
   .catch(err=>{
-    console.log(err);
+    universalOn('Service currently unavailable');
   });
 
   $("#logo").addEventListener('click',(ev)=>{
     ev.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   })
+
+
+  

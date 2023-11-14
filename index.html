@@ -39,13 +39,11 @@
 
 <body>
   
-<span id="logo">Rest countries api</span>
+<span id="logo" class="reflect">Rest countries api</span>
 
-<section id="randomPage">
-
+<section id="countryPage">
 
 <article class="nobg">
-    
      
 <main class="whole">
 <div class="country-search gap">
@@ -57,7 +55,6 @@
 <ul id="suggestions"></ul>
 </main>
 </article>
-
 
 <aside id="filterBox">
 <span class="all All active" data-region="All" id="all">All</span>
@@ -71,10 +68,7 @@
   
 </aside>
 
-
 <main id="countriesBody"></main>
-
-
 
 <!--Rest countries api-->
 <aside id="countyDetails">
@@ -155,20 +149,21 @@
 
 </section>
 
-<!-- universal pop-up -->
-<div class="universal-box flex-column gap-30 none" id="universal">
+  <!-- universal pop-up -->
+  <div id="universal">
 
-<h6 id="title">universal title</h6>
-
-<div class="flex-row"><p id="content"></p> <span id="universalOkay">okay</span></div>
-</div>
-<!-- universal pop-up end-->
+    <p id="content"></p> 
+    
+    <img src="images/cancel.svg" alt="close notification" id="universalOkay">
+    
+    </div>
+      <!-- universal pop-up end-->
 
 </body>
 
-<script src="/js/dumisa.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<!--<script src="/js/autocomplete.js" type="text/javascript" charset="utf-8"></script>-->
+<script src="/js/dumisa.js" type="text/javascript" charset="utf-8"></script>
 
 <script src="pwa.js" type="text/javascript" charset="utf-8"></script>
 
