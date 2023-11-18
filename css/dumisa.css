@@ -229,11 +229,14 @@ h1{
 
 body footer{
   position: relative;
-  width: 100%;
+  width: 98%;
   display: grid;
   gap: 30px;
   place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  border-radius: 10px;
+  background: rgb(52, 61, 70);
+  margin-bottom: 20px;
 }
 
 footer > main{
