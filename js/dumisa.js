@@ -372,4 +372,6 @@ if(!this.value){
   })
 
 
-  
+  setTimeout(()=>{
+none($('#opening'))
+  },2000)
