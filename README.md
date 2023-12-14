@@ -1,9 +1,6 @@
-# updated on 15 September 2023 - Dumisa
+# Discontinued project : Rest Country API
 
-My personal portfolio where I showcase my skills and abilities
-
-version 4: dark theme
-
+Built using Html, Css and Vanilla JavaScript. Now discounted to be built using CSS & JS frameworks to improve performance. 
 
 
 
