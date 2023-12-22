@@ -189,18 +189,20 @@ countyName.textContent.toLowerCase() === 'united states' || countyName.textConte
 
 }).catch((e)=>{
   
-  universalOn('Data about this country could not be found');
+  universalOn(`Data about ${fromTheClickedDiv} could not be found`);
+  
+let empty = 404;
 
-countryCode.textContent = null;
+countryCode.textContent = empty;
 countyFlag.src = '';
-countryOfficial.textContent = null;
-countyName.textContent = null;
-countryUtc.textContent = null;
-countryPopulation.textContent = null;
-countryContinent.textContent = null;
+countryOfficial.textContent = empty;
+countyName.textContent = empty;
+countryUtc.textContent = empty;
+countryPopulation.textContent = empty;
+countryContinent.textContent = empty;
 countryArm.src = '';
-countryCurrency.textContent = null;
-currencyFullName.textContent = null;
+countryCurrency.textContent = empty;
+currencyFullName.textContent = empty;
 
 
 });
